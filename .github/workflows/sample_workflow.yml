@@ -1,0 +1,63 @@
+name: Remote Solution Promotion
+
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pipx
+        pipx install https://github.com/instabase/app-cicd-toolkit/releases/download/0.0.2/instabase_app_cicd_toolkit-0.0.2-py3-none-any.whl
+    - name: Upload and compile IB solution
+      env:
+        TARGET_IB_API_TOKEN: ${{ secrets.TARGET_IB_API_TOKEN }}
+        SOURCE_IB_API_TOKEN: ${{ vars.SOURCE_IB_API_TOKEN }}
+        TARGET_IB_HOST: ${{ secrets.TARGET_IB_HOST }}
+        SOURCE_IB_HOST: ${{ vars.SOURCE_IB_HOST }}
+        SOLUTION_BUILDER_NAME: ${{ vars.SOLUTION_BUILDER_NAME }}
+        FLOW_NAME: ${{ secrets.FLOW_NAME }}
+        WORKSPACE_DRIVE_PATH: ${{ vars.WORKSPACE_DRIVE_PATH }}
+        TARGET_IB_PATH: ${{ vars.TARGET_IB_PATH }}
+        SOURCE_WORKING_DIR: ${{ vars.SOURCE_WORKING_DIR }}
+        DEPENDENCIES: ${{ vars.DEPENDENCIES }}
+        
+      run: |
+        ib-cicd-solution-builder --remote_flow --download_ibsolution --set_github_actions_env_var --compile_source_solution
+
+    - name: Commit changes
+      run: |
+        git config --global user.email "no-reply@github.com"
+        git config --global user.name "GitHub Actions"
+        git config --global --add safe.directory /__w/${{ github.event.repository.name }}/*
+        git add '*.ibsolution'
+        git commit -m "Add ibsolution file"
+        git tag -a ${{ env.PACKAGE_VERSION }}
+        git push
+        echo ${{ env.PACKAGE_VERSION }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create release and upload artifacts
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ env.PACKAGE_VERSION }}
+        artifacts: "*.ibsolution"

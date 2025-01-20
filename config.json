@@ -1,0 +1,21 @@
+{
+    "source": {
+        "host_url": "https://aihub.instabase.com",
+        "token": "1hVvDxAHPawK6C7z1OiigIkeIMXojU",
+        "project_id": "019324d9-b0b0-7205-b2c9-c1b1bcba9280",
+        "flow_path": "",
+        "org": "ib-internal",
+        "workspace": "vinay.thapa_instabase.com",
+        "app_id": "2eb615da-e1e1-4fd3-88c2-7ac57de76a28"
+    },
+    "target": {
+        "host_url": "https://ci-cd-test-1.internal.instabase.com",
+        "token": "v3b43OQ1uzLPD0Y2KASjaOdz0PZuEG",
+        "org": "SolEng",
+        "workspace": "CI-CD"
+    },
+    "app_details": {
+        "name": "Query DB App",
+        "version": "0.0.6"
+    }
+}
