@@ -15,7 +15,9 @@
         "workspace": "CI-CD"
     },
     "app_details": {
-        "name": "Query DB App",
-        "version": "0.0.6"
-    }
+        "name": "Test App",
+        "version": "0.0.1"
+    },
+    "release_notes": "@vinaythapa version 1"
 }
+

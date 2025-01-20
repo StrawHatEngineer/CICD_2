@@ -8,7 +8,11 @@ load_dotenv()
 # Run the ib-cicd command with environment variables
 command = [
     "promote-build-solution", 
-    "--vinay"
+    "--compile_solution",
+    "--download_binary",
+    # "--get_binary",
+    # "--upload_binary",
+    # "--publish_advanced_app",
 ]
 
 result = subprocess.run(command, env=os.environ)
