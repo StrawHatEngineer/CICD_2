@@ -26,6 +26,9 @@ jobs:
       - name: Download the .whl file
         run: |
           curl -L -H "Authorization: token ${{ secrets.GH_TOKEN }}" -o cicd_aihub-0.0.3-py3-none-any.whl https://github.com/StrawHatEngineer/CICD/releases/download/0.0.3/cicd_aihub-0.0.3-py3-none-any.whl
+      
+      - name: Check file path
+        run: ls -l cicd_aihub-0.0.3-py3-none-any.whl
 
       - name: Install the package from the .whl file
         run: |
