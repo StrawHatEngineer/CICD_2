@@ -16,6 +16,8 @@
     },
     "app_details": {
         "name": "Query DB App",
-        "version": "0.0.6"
-    }
+        "version": "1.0.1"
+    },
+    "release_notes": "@vinaythapa"
 }
+
