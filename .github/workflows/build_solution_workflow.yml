@@ -27,7 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pipx
-          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/0.0.4/cicd_aihub-0.0.4-py3-none-any.whl
+          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/0.0.5/cicd_aihub-0.0.5-py3-none-any.whl
 
       - name: Fetch Latest App Data
         run: |
