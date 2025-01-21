@@ -1,0 +1,70 @@
+{
+    "117577": {
+        "description": "",
+        "fields": {
+            "350938": {
+                "data_type": "TEXT",
+                "description": "The complete name of the individual as it appears on the document, including both first and last names.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Full Name",
+                "position": 0,
+                "prompt": "Full Name",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "350939": {
+                "data_type": "TEXT",
+                "description": "Address. as",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Address",
+                "position": 1,
+                "prompt": "Address",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "350940": {
+                "data_type": "TEXT",
+                "description": "Date of Birth",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Date of Birth",
+                "position": 2,
+                "prompt": "Date of Birth",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "350941": {
+                "data_type": "TEXT",
+                "description": "Expiry Date",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Expiry Date",
+                "position": 3,
+                "prompt": "Expiry Date",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "387623": {
+                "data_type": "TEXT",
+                "description": "",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Gender",
+                "position": 4,
+                "prompt": "Gender",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Driver License"
+    },
+    "128031": {
+        "description": "",
+        "fields": {},
+        "name": "Other"
+    },
+    "last_edited_at": "1737463254000",
+    "last_edited_class_at": "1736848538000"
+}

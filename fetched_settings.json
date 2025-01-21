@@ -1,0 +1,99 @@
+{
+    "projects": [
+        {
+            "active_deployed_solution_id": "1f5b357d-a46f-4725-92ff-98f98a583468",
+            "createdAtMs": "1735899319000",
+            "creation_base": "NONE",
+            "data_root": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/aihub/01942ba9-8a7b-7d75-b1e7-7d0a56bd465a",
+            "desc": "New project",
+            "extraction_mode": null,
+            "id": "01942ba9-8a7b-7d75-b1e7-7d0a56bd465a",
+            "llm": "gpt-3.5-turbo",
+            "matches_default_drive": true,
+            "name": "DL App",
+            "needs_migration": false,
+            "owner": "67d786be-6a34-4b23-a196-f8174e6ff6ea",
+            "ownerPublicId": "vinay.thapa_instabase.com",
+            "project_root": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/aihub/01942ba9-8a7b-7d75-b1e7-7d0a56bd465a",
+            "reader_profile": {
+                "createdBy": "",
+                "createdOn": 1735899318667,
+                "defaultProfile": "",
+                "foundationVersion": "",
+                "inputPath": null,
+                "lastModifiedBy": "",
+                "lastModifiedOn": 1735899318667,
+                "outputPath": null,
+                "profiles": [
+                    {
+                        "entitySettings": [],
+                        "name": "aihub",
+                        "readSettings": {
+                            "add_barcode_identifier": true,
+                            "cache_pdf_results": false,
+                            "correct_inversion": false,
+                            "correct_orientation": false,
+                            "correct_resolution": false,
+                            "correct_resolution_auto": false,
+                            "detect_barcodes": false,
+                            "detect_blurry_files": false,
+                            "dewarp_page": true,
+                            "document_mapping": "document_is_record_skip_empty_page",
+                            "enable_ibdoc_v2": true,
+                            "enable_paragraph_ordering": false,
+                            "enable_table_markdown_enrichment": false,
+                            "encryption_config": null,
+                            "entity_models": [
+                                {
+                                    "model_name": "signature_model",
+                                    "model_version": "0.0.4"
+                                },
+                                {
+                                    "model_name": "barcode_qrcode_detection",
+                                    "model_version": "1.0.0"
+                                }
+                            ],
+                            "extract_all_pdf_layers": true,
+                            "find_lines": false,
+                            "fonts": null,
+                            "force_image_ocr": false,
+                            "image_filters": null,
+                            "languages": null,
+                            "layout_algorithm": "layout_algo_spatial",
+                            "model_specific_settings": {
+                                "marx_v1": {
+                                    "version": "v3"
+                                }
+                            },
+                            "native_excel_processing": true,
+                            "ocr_page_type": "marx",
+                            "ocr_timeout": null,
+                            "output_format_layout": "layout_per_page",
+                            "output_formats": null,
+                            "page_range_str": "",
+                            "preprocess_excel_files": false,
+                            "process_type": "auto_to_txt",
+                            "produce_metadata_list": true,
+                            "produce_word_metadata": true,
+                            "remove_boxes": false,
+                            "remove_boxes_over_height_percent": null,
+                            "remove_boxes_over_width_percent": null,
+                            "remove_space_wordpolys": true,
+                            "remove_vertical_text": false,
+                            "reorient_words": false,
+                            "repair_pdfs": false,
+                            "scripts_dir": "",
+                            "write_converted_image": true,
+                            "write_thumbnail": true
+                        }
+                    }
+                ],
+                "schema": "1"
+            },
+            "repo_id": "c869d2df-ae6f-42e9-b433-6e0595d5ab60",
+            "settings": {},
+            "updatedAtMs": "1735899331000",
+            "workspace": "vinay.thapa_instabase.com"
+        }
+    ]
+}
