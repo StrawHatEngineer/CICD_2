@@ -40,7 +40,7 @@ jobs:
           git config --global --add safe.directory /__w/${{ github.event.repository.name }}/*
           COMMIT_MESSAGE=$(jq -r '.release_notes' config.json)
           git add -f .
-          git commit -m "$COMMIT_MESSAGE"
+          git commit -m "$COMMIT_MESSAGE" --allow-empty
           git push origin ${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
