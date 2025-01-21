@@ -2,11 +2,11 @@
     "source": {
         "host_url": "https://aihub.instabase.com",
         "token": "1hVvDxAHPawK6C7z1OiigIkeIMXojU",
-        "project_id": "019324d9-b0b0-7205-b2c9-c1b1bcba9280",
+        "project_id": "01942ba9-8a7b-7d75-b1e7-7d0a56bd465a",
         "flow_path": "",
         "org": "ib-internal",
         "workspace": "vinay.thapa_instabase.com",
-        "app_id": "2eb615da-e1e1-4fd3-88c2-7ac57de76a28"
+        "app_id": "75b22b45-b2a3-4851-8674-ac03cb91596b"
     },
     "target": {
         "host_url": "https://ci-cd-test-1.internal.instabase.com",
@@ -14,10 +14,6 @@
         "org": "SolEng",
         "workspace": "CI-CD"
     },
-    "app_details": {
-        "name": "Test App",
-        "version": "0.0.1"
-    },
-    "release_notes": "@vinaythapa version 1"
+    "release_notes": "release version 0.1.1"
 }
 
