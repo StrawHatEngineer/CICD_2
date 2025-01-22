@@ -70,6 +70,18 @@
                     "prompt": "Expiry Date",
                     "prompt_schema": null,
                     "prompt_type": "basic"
+                },
+                {
+                    "data_type": "TEXT",
+                    "description": "",
+                    "field_id": "387623",
+                    "lines": [],
+                    "model_type": "DEFAULT",
+                    "name": "Gender",
+                    "position": 4,
+                    "prompt": "Gender",
+                    "prompt_schema": null,
+                    "prompt_type": "basic"
                 }
             ]
         },
