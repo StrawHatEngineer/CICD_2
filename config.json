@@ -1,23 +1,27 @@
 {
     "source": {
-        "host_url": "https://aihub.instabase.com",
-        "token": "1hVvDxAHPawK6C7z1OiigIkeIMXojU",
-        "project_id": "019324d9-b0b0-7205-b2c9-c1b1bcba9280",
-        "flow_path": "",
+        "is_advanced" : true,
+        "host_url": "https://aihub.instabase.com", 
+        "token": "1hVvDxAHPawK6C7z1OiigIkeIMXojU",  
+        "project_id": "", 
+        "flow_path": "ib-internal/vinay.thapa_instabase.com/fs/Instabase Drive/Signature Verification/Signature_Verification_Flow.ibflow",
         "org": "ib-internal",
         "workspace": "vinay.thapa_instabase.com",
-        "app_id": "2eb615da-e1e1-4fd3-88c2-7ac57de76a28"
+        "app_id": "a07a86a3-20d0-4433-8cae-7b86410d8855",
+        "deployment_id": ""
     },
     "target": {
-        "host_url": "https://ci-cd-test-1.internal.instabase.com",
-        "token": "v3b43OQ1uzLPD0Y2KASjaOdz0PZuEG",
+        "host_url": "https://ci-cd-test-1.internal.instabase.com",   
+        "token": "v3b43OQ1uzLPD0Y2KASjaOdz0PZuEG",   
         "org": "SolEng",
-        "workspace": "CI-CD"
+        "workspace": "CI-CD"              
     },
-    "app_details": {
-        "name": "Test App",
-        "version": "0.0.1"
+    "settings": {
+        "rebuild": false
     },
-    "release_notes": "@vinaythapa version 1"
+    "testing": {
+        "regression": {}
+    },
+    "release_notes": "checking advanced app"
 }
 
