@@ -1,0 +1,155 @@
+{
+    "112451": {
+        "description": "",
+        "fields": {
+            "335978": {
+                "data_type": "TEXT",
+                "description": "The full name of the person who is sending the notice including prefix and initials. If no name is found, return N/A.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Name of Sender",
+                "position": 0,
+                "prompt": "Name of Sender",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "336001": {
+                "data_type": "TEXT",
+                "description": "The full name of the person receiving the notice. If no Name of Receiver found, then return N/A",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Name of Receiver",
+                "position": 4,
+                "prompt": "Name of Receiver",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "336002": {
+                "data_type": "TEXT",
+                "description": "The full name of the client on whose behalf the notice is being sent. If Name of Sender's Client is not found, then return \"N/A\".",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Name of Sender Client",
+                "position": 6,
+                "prompt": "Name of Sender Client",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "336004": {
+                "data_type": "TEXT",
+                "description": "The name of the person or company represented by the agent receiving this notice. The Name of Sender Client and Name of Receiver Client could not be same. If no Name of Receiver Client found, then return N/A.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Name of Receiver Client",
+                "position": 7,
+                "prompt": "Name of Receiver Client",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "336006": {
+                "data_type": "TEXT",
+                "description": "The total of unpaid amount specified in the eviction notice. If no Outstanding Claim found, then return N/A.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Outstanding Claim",
+                "position": 8,
+                "prompt": "Outstanding Claim",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "336007": {
+                "data_type": "TEXT",
+                "description": "The number of days given to settle the claim from the date of receipt of the notice. It should be with \"days\". If no Cure Period Duration found, then return N/A",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Cure Period Duration",
+                "position": 9,
+                "prompt": "Cure Period Duration",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "336008": {
+                "data_type": "TEXT",
+                "description": "The date on which the eviction notice was issued, typically found near the top of the document. If no Date of Notice found, then return N/A",
+                "lines": [
+                    {
+                        "function_args": [
+                            {
+                                "data_type": "TEXT",
+                                "name": "input__format",
+                                "value": "\"\""
+                            },
+                            {
+                                "data_type": "TEXT",
+                                "name": "output__format",
+                                "value": "\"mmddyyyy\""
+                            }
+                        ],
+                        "function_id": null,
+                        "line_type": "NATIVE",
+                        "native_fn_name": "format_date",
+                        "prompt": null
+                    }
+                ],
+                "model_type": "DEFAULT",
+                "name": "Date of Notice",
+                "position": 10,
+                "prompt": "Date of Notice",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "339481": {
+                "data_type": "TEXT",
+                "description": "The complete address of the sender, including suite number, building name, street address, city name, state name, country, and Zip Code. If no Sender Full Address found, then return N/A.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Sender Full Address",
+                "position": 1,
+                "prompt": "Sender Full Address",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "339484": {
+                "data_type": "TEXT",
+                "description": "The full address of the recipient may include elements such as a street name, number, city, state, postal code, and country. If no Receiver's Address found, then return an N/A.",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Recipient Address",
+                "position": 5,
+                "prompt": "Recipient Address",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "345839": {
+                "data_type": "TEXT",
+                "description": "The email address of the person who sent the letter. If no Sender Email Address, then return N/A",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Sender Email Address",
+                "position": 2,
+                "prompt": "Sender Email Address",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            },
+            "347317": {
+                "data_type": "TEXT",
+                "description": "The phone number of the sender of the eviction notice, formatted as +1 XXX-XXX-XXXX. If no Sender Contact Number found, then return N/A",
+                "lines": [],
+                "model_type": "DEFAULT",
+                "name": "Sender Contact Number",
+                "position": 3,
+                "prompt": "Sender Contact Number",
+                "prompt_schema": null,
+                "prompt_type": "basic"
+            }
+        },
+        "name": "Agent Notice"
+    },
+    "112482": {
+        "description": "",
+        "fields": {},
+        "name": "Other"
+    },
+    "last_edited_at": "1737013098000",
+    "last_edited_class_at": "1733896366000"
+}

@@ -1,0 +1,60 @@
+{
+    "last_updated": 1737012909000,
+    "rules": [
+        {
+            "affected_fields": [],
+            "alert_level": "FAILURE",
+            "created_at": 1737009652000,
+            "description": "",
+            "id": 5258,
+            "input_fields": [],
+            "name": "Rule 1",
+            "params": {
+                "confidence_threshold": 0.85
+            },
+            "scope": "PROJECT",
+            "type": "CONFIDENCE",
+            "updated_at": 1737012909000
+        },
+        {
+            "affected_fields": [
+                335978
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1737010321000,
+            "description": "Validation prompt",
+            "id": 5259,
+            "input_fields": [
+                335978
+            ],
+            "name": "Rule 2",
+            "params": {
+                "prompt": "\\Name of Sender\\ do not extract any number.",
+                "udf_id": 5614
+            },
+            "scope": "FIELD",
+            "type": "PROMPT_UDF",
+            "updated_at": 1737011630000
+        },
+        {
+            "affected_fields": [
+                345839
+            ],
+            "alert_level": "FAILURE",
+            "created_at": 1737010651000,
+            "description": "Validation prompt",
+            "id": 5260,
+            "input_fields": [
+                345839
+            ],
+            "name": "Rule 3",
+            "params": {
+                "prompt": "\\Sender Email Address\\ A valid email address should follow the format: <a rel=\"noopener\">username@domain.extension</a>",
+                "udf_id": 5610
+            },
+            "scope": "FIELD",
+            "type": "PROMPT_UDF",
+            "updated_at": 1737010784000
+        }
+    ]
+}
