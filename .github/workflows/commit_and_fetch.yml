@@ -1,4 +1,4 @@
-name: App Development and Migration
+name: Fetch Latest Code
 
 on:
   push:
@@ -8,18 +8,9 @@ on:
       - 'README.md'
       - 'Contributing.md'
 
-  workflow_dispatch:
-    # Manual trigger for any branch
-    inputs:
-      branch:
-        description: 'Branch to deploy'
-        required: true
-        default: 'main'
-
 jobs:
   development:
-    name: Continuous integration of code
-    if: github.event_name == 'push' # Only run for push events
+    name: Fetch and Commit Latest Code
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
@@ -38,13 +29,10 @@ jobs:
           FLOW_PATH=$(jq -r '.source.flow_path' config.json)
 
           if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
-            # Advanced app with file system path
             promote-solution --compile_source_solution --download_solution
           elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
-            # Advanced app with Solution Builder
             promote-sb-solution --compile_source_solution --download_solution
           else
-            # Regular app without Solution Builder
             promote-build-solution --compile_solution --download_binary
           fi
 
@@ -59,24 +47,4 @@ jobs:
           git commit -m "$COMMIT_MESSAGE" --allow-empty
           git push origin ${{ github.ref_name }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  migrate_to_prod:
-    name: Migration to PROD
-    if: github.event_name == 'workflow_dispatch' 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }} 
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pipx
-          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/0.0.7/cicd_aihub-0.0.7-py3-none-any.whl
-
-      - name: Migrate app to PROD
-        run: |
-          promote-build-solution --upload_binary --publish_advanced_app --create_deployment
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
