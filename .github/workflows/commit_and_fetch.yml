@@ -29,9 +29,9 @@ jobs:
           FLOW_PATH=$(jq -r '.source.flow_path' config.json)
 
           if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
-            promote-solution --compile_source_solution --download_solution
+            promote-solution --compile_solution --download_solution
           elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
-            promote-sb-solution --compile_source_solution --download_solution
+            promote-sb-solution --compile_solution --download_solution
           else
             promote-build-solution --compile_solution --download_binary
           fi
