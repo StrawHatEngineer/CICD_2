@@ -1,0 +1,58 @@
+name: Migrate to Target
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'Contributing.md'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
+
+jobs:
+  migrate_to_target:
+    name: Migration to Target
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref_name }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pipx
+          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/0.0.7/cicd_aihub-0.0.7-py3-none-any.whl
+
+      - name: Validate config.json
+        run: |
+          if [ ! -f config.json ]; then
+            echo "Error: config.json file not found"
+            exit 1
+          fi
+          
+          APP_ID=$(jq -r '.app_id' config.json)
+          if [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ]; then
+            echo "Error: app_id is missing or null in config.json"
+            exit 1
+          fi
+
+      - name: Migrate app to Target
+        run: |
+          IS_ADVANCED=$(jq -r '.source.is_advanced' config.json)
+          SB_NAME=$(jq -r '.source.sb_name' config.json)
+          FLOW_PATH=$(jq -r '.source.flow_path' config.json)
+
+          if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
+            promote-solution --upload_solution_to_target --publish_advanced_app
+          elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
+            promote-sb-solution --upload_solution_to_target --publish_advanced_app
+          else
+            promote-build-solution --upload_binary --publish_advanced_app
+          fi
