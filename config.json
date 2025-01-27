@@ -9,7 +9,7 @@
         "flow_name": "Smart_DL_Vinay_Flow",
         "org": "vinay.singh.thapa",
         "workspace": "bootcamp",
-        "app_id": "dummy_app_id",
+        "app_id": "",
         "deployment_id": ""
     },
     "target": {
