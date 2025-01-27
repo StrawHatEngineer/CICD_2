@@ -1,8 +1,8 @@
 {
     "source": {
         "is_advanced" : true,
-        "host_url": "https://aihub.instabase.com", 
-        "token": "1hVvDxAHPawK6C7z1OiigIkeIMXojU",  
+        "host_url": "https://platform.instabase.com", 
+        "token": "mjLRyZP0bxIG98NCOaL0QLKsbyrm5i",  
         "project_id": "", 
         "flow_path": "",
         "sb_name": "DL_Data_Extraction",
