@@ -1,0 +1,23 @@
+{
+    "appReleaseVersion": "24.44",
+    "author": "vinay thapa",
+    "createdAtMs": "1721281280000",
+    "description": "initial release",
+    "id": "a07a86a3-20d0-4433-8cae-7b86410d8855",
+    "isCustomizable": false,
+    "linkSharingMode": "OFF",
+    "metadata": "{\"authors\": [\"vinay thapa\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"is_advanced\": true}",
+    "name": "DL_Data_Extraction",
+    "owner": "instabase",
+    "sharedAccounts": [
+        "ib-internal"
+    ],
+    "solutionType": "EXTRACTION",
+    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/a07a86a3-20d0-4433-8cae-7b86410d8855",
+    "state": "PRODUCTION",
+    "summary": "Extract data from DL",
+    "updateMode": "UPDATE_WHEN_EXPIRED",
+    "updatedAtMs": "1721281288000",
+    "version": "0.0.1",
+    "visibility": "PRIVATE"
+}

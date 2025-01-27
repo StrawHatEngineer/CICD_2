@@ -37,7 +37,7 @@ jobs:
             exit 1
           fi
           
-          APP_ID=$(jq -r '.app_id' config.json)
+          APP_ID=$(jq -r '.source.app_id' config.json)
           if [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ]; then
             echo "Error: app_id is missing or null in config.json"
             exit 1
@@ -50,9 +50,9 @@ jobs:
           FLOW_PATH=$(jq -r '.source.flow_path' config.json)
 
           if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
-            promote-solution --upload_solution_to_target --publish_advanced_app
+            promote-solution --promote_solution_to_target --publish_advanced_app
           elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
-            promote-sb-solution --upload_solution_to_target --publish_advanced_app
+            promote-sb-solution --promote_solution_to_target --publish_advanced_app
           else
             promote-build-solution --upload_binary --publish_advanced_app
           fi
