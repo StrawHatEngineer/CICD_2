@@ -1,0 +1,5 @@
+{
+  "model_name": "model_SignatureComparison_a1eb52282cc84b5bb80a2d95aaafc860",
+  "model_version": "0.0.1",
+  "min_confidence_validation": "0.90"
+}

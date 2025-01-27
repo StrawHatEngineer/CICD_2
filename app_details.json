@@ -1,0 +1,23 @@
+{
+    "appReleaseVersion": "24.44",
+    "author": "pramod",
+    "createdAtMs": "1721281280000",
+    "description": "No release notes",
+    "id": "a07a86a3-20d0-4433-8cae-7b86410d8855",
+    "isCustomizable": false,
+    "linkSharingMode": "OFF",
+    "metadata": "{\"authors\": [\"pramod\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"is_advanced\": true}",
+    "name": "Signature Verification",
+    "owner": "instabase_dup",
+    "sharedAccounts": [
+        "ib-internal"
+    ],
+    "solutionType": "EXTRACTION",
+    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/a07a86a3-20d0-4433-8cae-7b86410d8855",
+    "state": "PRODUCTION",
+    "summary": "Compares multiple signature images and determines their similarity.",
+    "updateMode": "UPDATE_WHEN_EXPIRED",
+    "updatedAtMs": "1721281288000",
+    "version": "0.0.1",
+    "visibility": "PRIVATE"
+}

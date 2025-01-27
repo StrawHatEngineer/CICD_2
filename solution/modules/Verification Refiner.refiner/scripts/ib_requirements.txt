@@ -1,0 +1,1 @@
+ib_image_signature_comparator==0.0.1

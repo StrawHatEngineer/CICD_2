@@ -1,0 +1,1 @@
+from .__init__ import register as register_all
