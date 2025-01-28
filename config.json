@@ -11,11 +11,11 @@
         "workspace": "CI-CD",
         "app_id": "a56eb7e0-657d-497d-8c32-0c41d6314554",
         "deployment_id": "0194a7fa-7474-7a0b-9b88-78f82c0684c6",
-        "dependencies": ["model_DL_ca58a1844ac048a297157de827858c6b==0.0.8"]
+        "dependencies": []
     },
     "target": {
-        "host_url": "https://ci-cd-test-1.internal.instabase.com",   
-        "token": "v3b43OQ1uzLPD0Y2KASjaOdz0PZuEG",   
+        "host_url": "https://ci-cd-test-2.internal.instabase.com",   
+        "token": "qdogpEdj5bMQUx0IGN8NtBOc8ZvYRM",   
         "org": "SolEng",
         "workspace": "CI-CD"              
     },
