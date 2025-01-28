@@ -28,31 +28,38 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pipx
-          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/0.0.7/cicd_aihub-0.0.7-py3-none-any.whl
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/StrawHatEngineer/CICD_2/releases/latest | jq -r .tag_name)
+          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/${LATEST_RELEASE}/cicd_aihub-${LATEST_RELEASE#v}-py3-none-any.whl
 
-      # - name: Validate config.json
-      #   run: |
-      #     if [ ! -f config.json ]; then
-      #       echo "Error: config.json file not found"
-      #       exit 1
-      #     fi
+      - name: Validate config.json
+        run: |
+          if [ ! -f config.json ]; then
+            echo "Error: config.json file not found"
+            exit 1
+          fi
           
-      #     APP_ID=$(jq -r '.source.app_id' config.json)
-      #     if [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ]; then
-      #       echo "Error: app_id is missing or null in config.json"
-      #       exit 1
-      #     fi
-
+          APP_ID=$(jq -r '.source.app_id' config.json)
+          if [ -z "$APP_ID" ] || [ "$APP_ID" = "null" ]; then
+            echo "Error: app_id is missing or null in config.json"
+            exit 1
+          fi
+          
       - name: Migrate app to Target
         run: |
           IS_ADVANCED=$(jq -r '.source.is_advanced' config.json)
           SB_NAME=$(jq -r '.source.sb_name' config.json)
           FLOW_PATH=$(jq -r '.source.flow_path' config.json)
+          DEPLOYMENT_ID=$(jq -r '.source.deployment_id' config.json)
+          
+          DEPLOY_FLAG=""
+          if [ -n "$DEPLOYMENT_ID" ] && [ "$DEPLOYMENT_ID" != "null" ]; then
+            DEPLOY_FLAG="--create_deployment"
+          fi
 
           if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
-            promote-solution --promote_solution_to_target --publish_advanced_app
+            promote-solution --promote_solution_to_target --publish_advanced_app $DEPLOY_FLAG
           elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
-            promote-sb-solution --promote_solution_to_target --publish_advanced_app
+            promote-sb-solution --promote_solution_to_target --publish_advanced_app $DEPLOY_FLAG
           else
-            promote-build-solution --upload_binary --publish_advanced_app
+            promote-build-solution --upload_binary --publish_advanced_app $DEPLOY_FLAG
           fi
