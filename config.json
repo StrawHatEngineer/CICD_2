@@ -1,0 +1,30 @@
+{
+    "source": {
+        "is_advanced" : true,
+        "host_url": "https://ci-cd-test-1.internal.instabase.com", 
+        "token": "v3b43OQ1uzLPD0Y2KASjaOdz0PZuEG",  
+        "project_id": "", 
+        "flow_path": "",
+        "sb_name": "DL_App",
+        "flow_name": "DL_Flow",
+        "org": "SolEng",
+        "workspace": "CI-CD",
+        "app_id": "a56eb7e0-657d-497d-8c32-0c41d6314554",
+        "deployment_id": "0194a7fa-7474-7a0b-9b88-78f82c0684c6",
+        "dependencies": []
+    },
+    "target": {
+        "host_url": "https://ci-cd-test-2.internal.instabase.com",   
+        "token": "qdogpEdj5bMQUx0IGN8NtBOc8ZvYRM",   
+        "org": "SolEng",
+        "workspace": "CI-CD"              
+    },
+    "settings": {
+        "rebuild": false
+    },
+    "testing": {
+        "regression": {}
+    },
+    "release_notes": "initial release"
+}
+

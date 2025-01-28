@@ -1,0 +1,60 @@
+name: Fetch Latest Code
+
+on:
+  push:
+    branches:
+      - feature/*
+    paths-ignore:
+      - 'README.md'
+      - 'Contributing.md'
+
+jobs:
+  development:
+    name: Fetch and Commit Latest Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pipx
+          
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/StrawHatEngineer/CICD_2/releases/latest | jq -r .tag_name)
+          pipx install https://github.com/StrawHatEngineer/CICD_2/releases/download/${LATEST_RELEASE}/cicd_aihub-${LATEST_RELEASE}-py3-none-any.whl
+
+      - name: Fetch Latest App Data
+        run: |
+          IS_ADVANCED=$(jq -r '.source.is_advanced' config.json)
+          SB_NAME=$(jq -r '.source.sb_name' config.json)
+          FLOW_PATH=$(jq -r '.source.flow_path' config.json)
+          DEPENDENCIES=$(jq -r '.source.dependencies' config.json)
+          if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
+            if [ -n "$DEPENDENCIES" ] && [ "$DEPENDENCIES" != "null" ]; then
+              promote-solution --compile_solution --download_solution --upload_dependencies
+            else
+              promote-solution --compile_solution --download_solution
+            fi
+          elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
+            if [ -n "$DEPENDENCIES" ] && [ "$DEPENDENCIES" != "null" ]; then
+              promote-sb-solution --compile_solution --download_solution --upload_dependencies
+            else
+              promote-sb-solution --compile_solution --download_solution
+            fi
+          else
+            promote-build-solution --compile_solution --download_binary
+          fi
+
+      - name: Commit app data to feature branch
+        run: |
+          git config --global user.email "no-reply@github.com"
+          git config --global user.name "GitHub Actions"
+          git config --global --add safe.directory /__w/${{ github.event.repository.name }}/*
+          COMMIT_MESSAGE=$(jq -r '.release_notes' config.json)
+          git add -f .
+          git status
+          git commit -m "$COMMIT_MESSAGE" --allow-empty
+          git push origin ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
