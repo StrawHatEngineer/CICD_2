@@ -50,16 +50,22 @@ jobs:
           SB_NAME=$(jq -r '.source.sb_name' config.json)
           FLOW_PATH=$(jq -r '.source.flow_path' config.json)
           DEPLOYMENT_ID=$(jq -r '.source.deployment_id' config.json)
+          DEPENDENCIES=$(jq -r '.source.dependencies' config.json)
           
           DEPLOY_FLAG=""
           if [ -n "$DEPLOYMENT_ID" ] && [ "$DEPLOYMENT_ID" != "null" ]; then
             DEPLOY_FLAG="--create_deployment"
           fi
 
+          DEPS_FLAG=""
+          if [ -n "$DEPENDENCIES" ] && [ "$DEPENDENCIES" != "null" ]; then
+            DEPS_FLAG="--upload_dependencies"
+          fi
+
           if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
-            promote-solution --promote_solution_to_target --publish_advanced_app $DEPLOY_FLAG
+            promote-solution --promote_solution_to_target --publish_advanced_app $DEPLOY_FLAG $DEPS_FLAG
           elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
-            promote-sb-solution --promote_solution_to_target --publish_advanced_app $DEPLOY_FLAG
+            promote-sb-solution --promote_solution_to_target --publish_advanced_app $DEPLOY_FLAG $DEPS_FLAG
           else
             promote-build-solution --upload_binary --publish_advanced_app $DEPLOY_FLAG
           fi

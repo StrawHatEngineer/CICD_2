@@ -29,19 +29,10 @@ jobs:
           IS_ADVANCED=$(jq -r '.source.is_advanced' config.json)
           SB_NAME=$(jq -r '.source.sb_name' config.json)
           FLOW_PATH=$(jq -r '.source.flow_path' config.json)
-          DEPENDENCIES=$(jq -r '.source.dependencies' config.json)
           if [ "$IS_ADVANCED" = "true" ] && [ -n "$FLOW_PATH" ] && [ "$FLOW_PATH" != "null" ]; then
-            if [ -n "$DEPENDENCIES" ] && [ "$DEPENDENCIES" != "null" ]; then
-              promote-solution --compile_solution --download_solution --upload_dependencies
-            else
-              promote-solution --compile_solution --download_solution
-            fi
+            promote-solution --compile_solution --download_solution
           elif [ "$IS_ADVANCED" = "true" ] && [ -n "$SB_NAME" ] && [ "$SB_NAME" != "null" ]; then
-            if [ -n "$DEPENDENCIES" ] && [ "$DEPENDENCIES" != "null" ]; then
-              promote-sb-solution --compile_solution --download_solution --upload_dependencies
-            else
-              promote-sb-solution --compile_solution --download_solution
-            fi
+            promote-sb-solution --compile_solution --download_solution
           else
             promote-build-solution --compile_solution --download_binary
           fi
