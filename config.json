@@ -15,7 +15,7 @@
     },
     "target": {
         "host_url": "https://ci-cd-test-2.internal.instabase.com",   
-        "token": "qdogpEdj5bMQUx0IGN8NtBOc8ZvYRM",   
+        "token": "MPf5vjf4ZziLK1HE7Xq8ejERNTCREf",   
         "org": "SolEng",
         "workspace": "CI-CD"              
     },
