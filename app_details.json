@@ -1,23 +1,23 @@
 {
-    "appReleaseVersion": "24.44",
-    "author": "vinay thapa",
-    "createdAtMs": "1721281280000",
-    "description": "initial release",
-    "id": "a07a86a3-20d0-4433-8cae-7b86410d8855",
+    "appReleaseVersion": "24.50",
+    "author": "vinay.thapa_instabase.com",
+    "createdAtMs": "1737984534000",
+    "description": "initial version",
+    "id": "a56eb7e0-657d-497d-8c32-0c41d6314554",
     "isCustomizable": false,
     "linkSharingMode": "OFF",
-    "metadata": "{\"authors\": [\"vinay thapa\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"is_advanced\": true}",
-    "name": "DL_Data_Extraction",
+    "metadata": "{\"authors\": [\"vinay.thapa_instabase.com\"], \"icon\": \"icon.png\", \"samples\": \"\", \"results\": \"\", \"schema\": \"schema.json\", \"is_advanced\": true, \"billing_model\": \"default\"}",
+    "name": "CICD SB App",
     "owner": "instabase",
     "sharedAccounts": [
-        "ib-internal"
+        "SolEng"
     ],
     "solutionType": "EXTRACTION",
-    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/a07a86a3-20d0-4433-8cae-7b86410d8855",
+    "solution_path": "system/global/fs/Instabase Drive/Applications/Deployed/All/a56eb7e0-657d-497d-8c32-0c41d6314554",
     "state": "PRODUCTION",
-    "summary": "Extract data from DL",
+    "summary": "DL App to extract details from the driving licenses.",
     "updateMode": "UPDATE_WHEN_EXPIRED",
-    "updatedAtMs": "1721281288000",
+    "updatedAtMs": "1737984540000",
     "version": "0.0.1",
     "visibility": "PRIVATE"
 }
