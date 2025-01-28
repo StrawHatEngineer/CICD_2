@@ -1,0 +1,22 @@
+{
+    "app_name": "CICD SB App",
+    "app_version": "0.0.1",
+    "created_at_ms": 1737984996000,
+    "deployed_solution_id": "a56eb7e0-657d-497d-8c32-0c41d6314554",
+    "description": "",
+    "human_review_level": "doc_based",
+    "human_review_mode": "ON",
+    "id": "0194a7fa-7474-7a0b-9b88-78f82c0684c6",
+    "last_run_job_id": "a0a1f0cb-a63b-4c9e-9d99-4d1dea4e4aa2",
+    "last_run_status": "COMPLETE",
+    "last_run_timestamp_ns": 1738039454978332345,
+    "metric_alerts": null,
+    "name": "CICD SB App",
+    "notification_emails": null,
+    "owner": "vinay.thapa_instabase.com",
+    "review_within_sec": null,
+    "state": "ACTIVE",
+    "updated_at_ms": 1737984996000,
+    "webhooks": null,
+    "workspace": "CI-CD"
+}
